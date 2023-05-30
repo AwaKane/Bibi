@@ -50,12 +50,12 @@ class Login_form(forms.Form):
 
 
 class Etablissement_form(forms.ModelForm):
-    class meta: 
+    class Meta: 
         model = Etablissement
-        fields = ['user_etablissement', 'nom_etablissement', 'adresse', 'localisation', 'horaire', 'phone', 'typeEtablissement', 'specialites']
+        fields = ['user_etablissement', 'nom_etablissement', 'adresse', 'localisation', 'horaire', 'phone', 'typeEtablissement', 'prix', 'specialites']
 
 
 class RendezVous_form(forms.ModelForm):
-    class meta:
+    class Meta:
         model = RendezVous
-        fields = ['user', 'etablissement', 'objet', 'detail', 'prix', 'specialite']
+        fields = ['objet', 'detail', 'specialite']

@@ -104,13 +104,14 @@ TYPES= (
 
     #Classe Etablissement
 class Etablissement(models.Model):
-    user_etablisseement = models.ForeignKey(User, on_delete=models.CASCADE)
+    user_etablissement = models.ForeignKey(User, on_delete=models.CASCADE)
     nom_etablissement = models.CharField(max_length=50)
     adresse = models.CharField(max_length=100)
     localisation = models.CharField(max_length=500)
     horaire = models.TimeField()
     phone = models.CharField(max_length=10)
     typeEtablissement = models.CharField(max_length=50, choices=TYPES)
+    prix = models.IntegerField(default=0)
     specialites = TaggableManager()
 
     # Classe Rendez_vous
@@ -119,5 +120,4 @@ class RendezVous(models.Model):
     etablissement = models.ForeignKey(Etablissement, on_delete=models.CASCADE)
     objet = models.CharField(max_length=35)
     detail = models.TextField()
-    prix = models.IntegerField(default=0)
     specialite = TaggableManager()

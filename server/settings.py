@@ -31,6 +31,9 @@ AUTH_USER_MODEL = 'app.User'
 
 LOGIN_URL = "/login/"
 
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+]
 
 # Application definition
 
