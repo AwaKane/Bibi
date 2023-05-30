@@ -10,8 +10,10 @@
     <div>
         <ul>
             {%for item  in etablissements%}
-            <li href="{% urls 'detail' item.id%}">
-                {{item.nom_etablissement}}
+            <li>
+                <a href="{% url 'detail_etablis' item.id%}">
+                    {{item.nom_etablissement}}
+                </a>
             </li>
             {%endfor%}
         </ul>
