@@ -108,7 +108,7 @@ class Etablissement(models.Model):
     nom_etablissement = models.CharField(max_length=50)
     adresse = models.CharField(max_length=100)
     localisation = models.CharField(max_length=500)
-    horaire = models.TimeField()
+    horaire = models.DateTimeField()
     phone = models.CharField(max_length=10)
     typeEtablissement = models.CharField(max_length=50, choices=TYPES)
     prix = models.IntegerField(default=0)
