@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .models import *
 from .forms import *
 from django.contrib.auth import login, authenticate, logout
+from .utils import checkRdvNumber
 
 # Create your views here.
 def homeView(request):
@@ -25,12 +26,16 @@ def detailRdvView(request, rendez_vous_id):
 
 def ajoutEtablisView(request):
     if request.method == "POST":
-        form = Etablissement_form(request.POST)
-        if form.is_valid():
-            form.save()
+        forms = Etablissement_form(request.POST)
+        print(forms)
+        print("request thow")
+        if forms.is_valid():
+            print("saving data")
+            forms.save()
+        else:
+            print("echec de la requete")
     else:
-        form = Etablissement_form()
-        
+        forms = Etablissement_form()
     return render(request, "ajoutEtablissement.html", {'forms': forms})
 
 
@@ -39,12 +44,12 @@ def listRdvView(request):
     return render(request, "etablissement/listRDV.html", {"rdvs": rdvs})
 
 
-def rendezVousView(request):
+def rendezVousView(request, etabli_id):
     if request.method == "POST":
         forms = RendezVous_form(request.POST)
 
         if forms.is_valid():
-            forms.save()
+            checkRdvNumber(etabli_id, request.user, forms)
     else:
         forms = RendezVous_form() 
     return render(request, "patient/createRDV.html", {'forms': forms})
@@ -59,12 +64,12 @@ def loginView(request):
             user = authenticate(request, username=matricule, password=password)
             print("user authentifier")
             if user:
-                if user.personnel :
+                if user.personnel:
                     login(request, user)
-                    return redirect("ajoutEtablis")
-                elif user.admin:
+                    return redirect("listRDV")
+                else:
                     login(request, user)
-                    return redirect("home")
+                    return redirect("rendez_vous")
             else:
                 print("user don't exist")
         else: 
@@ -91,5 +96,15 @@ def signup_view(request):
             return redirect("home")
     else:
         form = User_form()
-    
     return render(request, 'auth/signup.html', {'form': form})
+
+
+#La view permettant au user de se connecter
+def ajoutUser_view(request):
+    if request.method == "POST":
+        form = User_form(request.POST)
+        if form.is_valid():
+            form.savePersonnel()
+    else:
+        form = User_form()
+    return render(request, 'ajoutUser.html', {'form': form})

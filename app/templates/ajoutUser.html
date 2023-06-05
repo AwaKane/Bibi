@@ -1,0 +1,46 @@
+{% block content%}
+    <section class="secInscrire">
+        <h3>S'inscrire</h3>
+        <form method="post" class="formSignup">
+            {% csrf_token %}
+            <div>
+                <input type="email" name="email" placeholder="Entrez votre adresse mail"/>
+            </div>
+
+            <div>
+                <input type="text" placeholder="Entrez le nom" name="name" id="">
+            </div>
+
+            <div>
+                <input type="text" placeholder="Entrez le prenom" name="firstName" id="">
+            </div>
+
+            <div>
+                <input type="text" placeholder="Entrez le numero" name="phone" id="">
+            </div>
+
+            <div>
+                <select name="genre" id="">
+                    <option value="">Sexe</option>
+                    <option value="Homme">Homme</option>
+                    <option value="Femme">Femme</option>
+                </select>
+            </div>
+
+            <div>
+                <input type="text" placeholder="Entrez la nationnalite" name="nation" id="">
+            </div>
+            
+            <div>
+                <input type="password" name="password" placeholder="Entrez votre mot de passe"/>
+            </div>
+            
+            <div>
+                <input type="password" name="password_2" placeholder="Reenntrez votre mot de passe"/>
+            </div>
+            <div>
+                <input type="submit" value="se connecter" class="sign">
+            </div>
+        </form>
+    </section>
+{% endblock content%}

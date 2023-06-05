@@ -7,6 +7,130 @@
     <title>Document</title>
 </head>
 <body>
-     
+ {% block content %}
+    <form method="post">
+        {% csrf_token %}
+        <tr>
+            <th><label for="id_user_etablissement">User etablissement:</label></th>
+            <td>
+        
+              <select name="user_etablissement" required id="id_user_etablissement">
+          <option value="">---------</option>
+        
+          <option value="1">med@gmail.com</option>
+        
+          <option value="2" selected>med2@gmail.com</option>
+        
+        </select>
+        
+        
+            </td>
+          </tr>
+        
+          <tr>
+            <th><label for="id_nom_etablissement">Nom etablissement:</label></th>
+            <td>
+        
+              <input type="text" name="nom_etablissement" value="test" maxlength="50" required id="id_nom_etablissement">
+        
+        
+            </td>
+          </tr>
+        
+          <tr>
+            <th><label for="id_adresse">Adresse:</label></th>
+            <td>
+        
+              <input type="text" name="adresse" value="liberte 6" maxlength="100" required id="id_adresse">
+        
+        
+            </td>
+          </tr>
+        
+          <tr>
+            <th><label for="id_localisation">Localisation:</label></th>
+            <td>
+              <ul class="errorlist"><li>This field is required.</li></ul>
+              <input type="text" name="localisation" maxlength="500" required id="id_localisation">
+        
+        
+            </td>
+          </tr>
+        
+          <tr>
+            <th><label for="id_heureDebut">HeureDebut:</label></th>
+            <td>
+              <ul class="errorlist"><li>This field is required.</li></ul>
+              <input type="text" name="heureDebut" maxlength="10" required id="id_heureDebut">
+        
+        
+            </td>
+          </tr>
+        
+          <tr>
+            <th><label for="id_heureFin">HeureFin:</label></th>
+            <td>
+              <ul class="errorlist"><li>This field is required.</li></ul>
+              <input type="text" name="heureFin" maxlength="10" required id="id_heureFin">
+        
+        
+            </td>
+          </tr>
+        
+          <tr>
+            <th><label for="id_phone">Phone:</label></th>
+            <td>
+              <ul class="errorlist"><li>This field is required.</li></ul>
+              <input type="text" name="phone" maxlength="10" required id="id_phone">
+        
+        
+            </td>
+          </tr>
+        
+          <tr>
+            <th><label for="id_typeEtablissement">TypeEtablissement:</label></th>
+            <td>
+              <ul class="errorlist"><li>This field is required.</li></ul>
+              <select name="typeEtablissement" required id="id_typeEtablissement">
+          <option value="" selected>---------</option>
+        
+          <option value="Clinique">Clinique</option>
+        
+          <option value="Hopital">Hopital</option>
+        
+        </select>
+        
+        
+            </td>
+          </tr>
+        
+          <tr>
+            <th><label for="id_prix">Prix:</label></th>
+            <td>
+              <ul class="errorlist"><li>This field is required.</li></ul>
+              <input type="number" name="prix" required id="id_prix">
+        
+        
+            </td>
+          </tr>
+        
+          <tr>
+            <th><label for="id_specialites">Tags:</label></th>
+            <td>
+              <ul class="errorlist"><li>This field is required.</li></ul>
+              <input type="text" name="specialites" required id="id_specialites">
+        
+                <br>
+                <span class="helptext">A comma-separated list of tags.</span>
+        
+        
+        
+        
+            </td>
+          </tr>
+
+        <input type="submit" value="creer">
+    </form> 
+{% endblock content%}   
 </body>
 </html>

@@ -7,9 +7,10 @@ urlpatterns=[
     path("etablissement/<int:etabli_id>", views.detailEtablisView, name="detail_etablis"),
     path("ajout-etablissement/", views.ajoutEtablisView, name="ajoutEtablis"),
     path("list-rendez-vous/", views.listRdvView, name="listRDV"),
-    path("rendez-vous/", views.rendezVousView, name="rendez_vous"),
+    path("etablissement/<int:etabli_id>/rendez-vous/", views.rendezVousView, name="rendez_vous"),
     path("rendez-vous/<int:rendez_vous_id>", views.detailRdvView, name="rendez_vous_detail"),
     path("login/", views.loginView, name="login"),
     path('logout/', views.logoutView, name='logout'),
     path("signup/",  views.signup_view, name="signup"),
+    path("ajout-user/",  views.ajoutUser_view, name="ajout-user"),
 ]
