@@ -47,7 +47,6 @@ def listRdvView(request):
 def rendezVousView(request, etabli_id):
     if request.method == "POST":
         forms = RendezVous_form(request.POST)
-
         if forms.is_valid():
             checkRdvNumber(etabli_id, request.user, forms)
     else:
@@ -59,9 +58,9 @@ def loginView(request):
     if request.method == "POST":
         form=Login_form(request.POST)
         if form.is_valid():
-            matricule=form.cleaned_data.get("email")
+            email=form.cleaned_data.get("email")
             password=form.cleaned_data.get("password")
-            user = authenticate(request, username=matricule, password=password)
+            user = authenticate(request, username=email, password=password)
             print("user authentifier")
             if user:
                 if user.personnel:
