@@ -1,0 +1,54 @@
+{% extends '_base.html'%}
+
+{% block titre%}Acueil {% endblock%}
+
+{% block scripts %}
+
+<div class="header">
+    <div class="header-content">
+        <h1>Medi Sn</h1>
+        <p>Votre santé, notre priorité : Trouvez, Réservez, Soignez</p>
+        
+        <form action="" class="search-bar">
+            <input type="text" placeholder="cherchez un institut de santé" name="q" >
+            <button type="submit"><img src="image/search.png"></button>
+        </form>
+    </div>
+</div>
+<!----------Service--------->
+<div class="service" >
+
+    <h1 class="heading">Services Offert</h1>
+    <p>Lorem ipsum dolor sit, amet  .</p>
+
+    <div class="service-container">
+
+        <div class="box">
+            <img src="image/cardiologie.png" alt="">
+            <h3>Cardiologie</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident accusanti
+                um doloribus hic in expedita quisquam dicta itaque, vitae distinctio est vero beatae doloremque vo. Sequi, cum.</p>
+            <a href="#" class="btn">Acceder</a>
+        </div>
+
+        <div class="box">
+            <img src="image/ophta.png" alt="">
+            <h3>Ophtamologie</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident accusanti
+                um doloribus hic in expedita quisquam dicta itaque, vitae distinctio est vero beatae doloremque vo. Sequi, cum.</p>
+            <a href="#" class="btn">Acceder</a>
+        </div>
+
+        <div class="box">
+            <img src="image/dentiste.png" alt="">
+            <h3>Dentiste</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident accusanti
+                um doloribus hic in expedita quisquam dicta itaque, vitae distinctio est vero beatae doloremque vo. Sequi, cum.</p>
+            <a href="#" class="btn">Acceder</a>
+        </div>
+        
+    </div>
+
+</div>
+
+{% endblock %}

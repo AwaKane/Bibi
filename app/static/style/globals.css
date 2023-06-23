@@ -1,0 +1,261 @@
+body{
+   /* background-color: rgb(200, 250, 250);*/
+   margin: 0;
+   padding: 0;
+   font-family: 'Josefin Sans', sans-serif; /* type de police*/
+   
+
+}
+.header{
+  min-height: 100vh;
+  width: 100%;
+  background: linear-gradient(225deg, hsla(216,57%,23%,1)29%, hsla(203,70%,74%,1)89%);
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#19335A", endColorstr="#8FC8EB", GradientType=1 );
+  
+}
+.logo{
+  color: #06333B;
+  font-size: 28px;
+}
+/*.nav {
+    text-decoration: none;
+    display: flex;
+    justify-content:right;
+    border-radius: 50px;
+}*/
+/* logo et background*/
+
+nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 40px;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+nav img{
+  width: 150px;
+  max-width: 100%;
+} 
+
+
+span{
+  color:#245D6B;
+}
+
+
+nav ul li{
+  
+  display: inline-block;
+  padding: 10px 20px;
+  text-align: center;
+}
+
+nav ul li a{
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+nav ul li::after{
+  content: '';
+  width: 0%;
+  height: 2px;
+  background: #288994;
+  display: block;
+  margin: auto;
+  transition: 0.5s;
+}
+nav ul li:hover::after{
+  width: 100%;
+}
+.nav-links{
+  flex: 1;
+  text-align: right;
+}
+
+.search-bar{
+  width: 100%;
+  max-width: 700px;
+  background: rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  border-radius: 50px; 
+  padding: 10px 20px;
+  backdrop-filter: blur(4px) saturate(180%);
+  
+ 
+}
+.search-bar input{
+  background: transparent;
+  flex: 1;
+  border: 0;
+  outline: none;
+  padding: 24px 20px;
+  font-size: 20px;
+  color: #cac7ff;
+}
+
+::placeholder{
+  color: #cac7ff;
+}
+
+.search-bar button img{
+  width: 25px;
+}
+.search-bar button{
+  border: 0;
+  border-radius: 70%;
+  width: 60px;
+  height: 60px;
+  background:#58629b ;
+  cursor: pointer;
+}
+.header-content{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) ;
+  text-align: center;
+  margin-top: 100px;
+  color: #95C4B4;
+}
+.header-content h1{
+  font-size: 60px;
+  line-height: 70px;
+  font-weight: 600;
+  max-width: 650px;
+}
+.header-content p{
+ font-weight: 400;
+ margin-bottom: 20px;
+ font-style: normal;
+}
+
+.service{
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  padding-top: 100px;
+}
+h1{
+  font-size: 36px;
+  font-weight: 600;
+}
+p{
+  color: #777;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 22px;
+  padding: 10px;
+}
+.service .service-container{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  gap: 15px;
+}
+.service .service-container .box{
+  box-shadow: 0 5px 10px rgba(0, 0,0,.2 );
+  border-radius: 5px;
+  background: #E0EBF7;
+  text-align: center;
+  padding: 30px 20px;
+}
+.service .service-container .box img{
+  height: 80px;
+}
+.service .service-container .box h3{
+  color:#444;
+  font-size: 22px;
+  padding: 10px 0;
+}
+.service .service-container .box p{
+  color:#777;
+  font-size: 15px;
+  line-height: 1.8;
+}
+.service .service-container .box .btn{
+  margin-top: 10px;
+  display: inline-block;
+  background: #288994;
+  color:#fff;
+  font-size: 17px;
+  border-radius: 5px;
+  padding: 8px 25px;
+}
+
+
+
+/*list des établissements*/
+
+.list{
+   
+    display: flex;
+    width: 90%;
+    background-color: #f5f5f5;
+    margin-left: 50px;
+    margin-right: 50px;
+    height: auto;
+    margin-top: 100px;
+    border-radius: 20px;
+}
+
+.etab {
+    margin-bottom: 10px;
+  }
+  
+  
+h3 {
+    text-decoration: none !important;
+    color: #333;
+    transition: background-color 0.3s ease;
+    justify-content: left;
+    font-family: Arial, sans-serif; 
+    padding: 10px; 
+    border-bottom: 1px solid #ccc;
+    
+}
+  
+  h3:hover {
+    background-color: lightblue;
+  }
+  
+  ul {
+    list-style-type: none; /* Supprimer les puces des listes */
+  }
+ 
+  
+  
+  /*détail Etablissement */
+.nom{
+display: flex;
+width: 513px;
+height: 52px;
+flex-direction: column;
+flex-shrink: 0;
+justify-content: space-between;
+}
+.nom img{
+  width: 124px;
+height: 114px;
+flex-shrink: 0;
+}
+  
+.coordone{
+  display: flex;
+width: 406px;
+height: 91px;
+flex-direction: column;
+flex-shrink: 0;
+color: #000;
+font-family: Archivo;
+}
+
+
+.localisation{
+  width: 763px;
+height: 279px;
+flex-shrink: 0;
+background: url(<path-to-image>), lightgray 50% / cover no-repeat;
+justify-content: flex-end;
+}
+  

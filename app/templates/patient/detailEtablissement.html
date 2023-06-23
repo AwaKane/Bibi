@@ -1,15 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <div>
-        {{etablis.nom_etablissement}}
-        {{etablis.adresse}}
+{% extends '_base.html'%}
+
+{% block titre%}Etablissements {% endblock%}
+
+
+    {% block scripts %}
+    <div class="header">
+    <div class="container">
+        <div class="list">
+            <div class="nom">
+                <h2>{{etablis.nom_etablissement}} </h2>
+                <img src="{{ etablis.logo.url }}" alt="{{ etablis.nom_etablissement }} logo">
+            </div>
+
+            <div class="coordone">
+               
+               <h4>{{etablis.adresse}} </h4> 
+                <h4>{{etablis.phone}} </h4>
+            
+            </div>
+            <div class="localisation">{{etablis.localisation}}</div>
+            
+        </div>
     </div>
-</body>
-</html>
+    </div>
+    {% endblock %}

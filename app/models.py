@@ -110,10 +110,11 @@ class Etablissement(models.Model):
     localisation = models.CharField(max_length=500)
     heureDebut = models.CharField(max_length=10)
     heureFin = models.CharField(max_length=10)
-    phone = models.CharField(max_length=10)
+    phone = models.CharField(max_length=12)
     typeEtablissement = models.CharField(max_length=50, choices=TYPES)
     prix = models.IntegerField(default=0)
     specialites = TaggableManager()
+    logo = models.ImageField(upload_to='etablissements/', default='media/etablissements/logo.jpg')
 
     # Classe Rendez_vous
 class RendezVous(models.Model):
