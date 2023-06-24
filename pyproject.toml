@@ -10,6 +10,7 @@ packages = [{include = "project_django"}]
 python = "^3.10"
 Django = "^4.1.5"
 django-taggit = "^4.0.0"
+pillow = "^9.5.0"
 
 
 [build-system]

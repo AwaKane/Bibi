@@ -113,7 +113,7 @@ class Etablissement(models.Model):
     phone = models.CharField(max_length=12)
     typeEtablissement = models.CharField(max_length=50, choices=TYPES)
     prix = models.IntegerField(default=0)
-    specialites = TaggableManager()
+    specialites = TaggableManager(verbose_name='specialites')
     logo = models.ImageField(upload_to='etablissements/', default='media/etablissements/logo.jpg')
 
     # Classe Rendez_vous
@@ -123,4 +123,4 @@ class RendezVous(models.Model):
     objet = models.CharField(max_length=35)
     detail = models.TextField()
     date = models.DateField()
-    specialite = TaggableManager()
+    specialite = TaggableManager(verbose_name='specialites')

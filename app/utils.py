@@ -14,9 +14,7 @@ def checkRdvNumber(etablis, user, forms):
     specialite = forms.cleaned_data.get('specialite')
     numberRDV =  len(RendezVous.objects.filter(etablissement=etablis, date=date))
     if numberRDV == 10:
-        print(specialite)
         print('Cette date est pleine')
     else: 
         print('Le nombre de rendez-vous est bas')
-        print(specialite)
         RendezVous.objects.create(user=user, etablissement=etablis, objet=objet, detail=detail, date=date, specialite=specialite)

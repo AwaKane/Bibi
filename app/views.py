@@ -3,10 +3,18 @@ from .models import *
 from .forms import *
 from django.contrib.auth import login, authenticate, logout
 from .utils import checkRdvNumber
+from django.db.models import Q
 
 # Create your views here.
 def homeView(request):
-    return render(request, "home.html", {})
+    etablissement_seached = ""
+
+    if 'q' in request.GET:
+        q = request.GET['q']
+        
+        multiple_q = Q(nom_etablissement__icontains=q)
+        etablissement_seached = Etablissement.objects.filter(multiple_q)
+    return render(request, "home.html", {'list_etablis':etablissement_seached})
 
 
 def listEtablisView(request):
