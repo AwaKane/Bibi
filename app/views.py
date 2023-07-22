@@ -111,7 +111,9 @@ def ajoutUser_view(request):
     if request.method == "POST":
         form = User_form(request.POST)
         if form.is_valid():
-            form.savePersonnel()
+            user = form.savePersonnel()
+            login(request, user)
+            retunr redirect("home")
     else:
         form = User_form()
     return render(request, 'ajoutUser.html', {'form': form})
